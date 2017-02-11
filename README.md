@@ -9,6 +9,14 @@ Output a PNG visualization of two byte-streams.
 A rudimentary tool to begin with to compare two identically sized streams. Lots
 of scope for improvement if it proves to be useful. 
 
+###Examples
+
+####Large file scan:
+![image](src/images/ex1.png)
+
+####Smaller file scan:
+![image](src/images/ex2.png)
+
 ###License
 
 GPL Version 3: https://github.com/exponential-decay/visual-binary-diff/blob/master/LICENSE
