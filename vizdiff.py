@@ -32,13 +32,15 @@ def HEXtoRGB(colorstring):
 
 def drawpng(comparelist):
 
+	sys.stderr.write("Diffs computed. Outputting pixels." + "\n")
+
 	l1 = comparelist
 
 	#l1 = [0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
 	#l1 = [0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
 
-	bytes = 100
-	pixsize = 25
+	bytes = 400
+	pixsize = 20
 
 	#Optional... Bytes, or sqrt... try to be dynamic...
 	bytes = min(int(math.sqrt(len(l1))+1), bytes)
@@ -103,7 +105,7 @@ def imagefiles(f1, f2):
 							comparelist.append(0)
 		drawpng(comparelist)
 	else:
-		sys.stderr.write("Filesizes do not match.")
+		sys.stderr.write("Filesizes do not match." + "\n")
 		sys.exit(1)
 	return
 
