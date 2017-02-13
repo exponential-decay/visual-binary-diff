@@ -11,6 +11,12 @@ from PIL import PngImagePlugin
 
 purple = "#551A8B"
 yellow = "#fff44f"
+grey = "#444444"
+
+#Ultimately unecessary at first, but see where program goes...
+MATCH = 0
+NOMATCH = 1
+EOF = 9
 
 def fadetuple(color):
 	x = 2
@@ -63,10 +69,13 @@ def drawpng(comparelist):
 
 	#for each entry, create a new set of pixels, e.g. 10x10
 	for i, x in enumerate(l1):
-		if x == 0:
+
+		if x == MATCH:
 			color = HEXtoRGB(purple)
-		if x == 1: 
+		if x == NOMATCH: 
 			color = HEXtoRGB(yellow)
+		if x == EOF:
+			color = HEXtoRGB(grey)
 
 		ypos = yloc
 		for y1 in range(pixsize):
@@ -94,19 +103,42 @@ def comparesize(f1, f2):
 
 def imagefiles(f1, f2):
 	comparelist = []
-	if comparesize(f1, f2):
-		with open(f1) as a:
-			with open(f2) as b:
-				for line in a:
-					for byte in line:
-						if byte != b.read(1):
-							comparelist.append(1)
-						else:
-							comparelist.append(0)
-		drawpng(comparelist)
-	else:
-		sys.stderr.write("Filesizes do not match." + "\n")
-		sys.exit(1)
+
+	a = open(f1)
+	b = open(f2)
+
+	b1eof = False
+	b2eof = False
+
+	read = True
+	while read:
+
+		if b1eof is not True:
+			b1 = a.read(1)
+			if len(b1) == 0:
+				b1eof = True
+
+		if b2eof is not True:
+			b2 = b.read(1)
+			if len(b2) == 0: 
+				b2eof = True
+
+		if b1eof is True and b2eof is True:
+			break
+
+		if len(b1) == 0 or len(b2) == 0:
+			comparelist.append(EOF)
+		elif b1 != b2:
+			comparelist.append(NOMATCH)
+		elif b1 == b2:
+			comparelist.append(MATCH)
+
+
+	drawpng(comparelist)
+
+	#else:
+	#	sys.stderr.write("Filesizes do not match." + "\n")
+	#	sys.exit(1)
 	return
 
 def main():
