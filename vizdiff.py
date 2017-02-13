@@ -46,7 +46,7 @@ def drawpng(comparelist):
 	#l1 = [0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
 
 	bytes = 400
-	pixsize = 20
+	pixsize = 6
 
 	#Optional... Bytes, or sqrt... try to be dynamic...
 	bytes = min(int(math.sqrt(len(l1))+1), bytes)
