@@ -12,6 +12,8 @@ of scope for improvement if it proves to be useful.
 ## Examples
 
 ### Example of a diff between two 5.25" disks, ~10 years apart
+*KEY:* Purple is where the disk images are identical, yellow is where there is a difference. <br/>
+
 ![image](src/images/ex1.png)
 
 ### Hypothesis based on early testing
