@@ -28,7 +28,7 @@ the volility of the disk today. I believe this is the equivalent to be hard of s
 The reader will do its best to understand, but the signal is analogue so its understanding is
 on a spectrum. We're not expecting binary results from a volatile analog medium.
 
-## What an archhive may need
+## What an archive may need
 
 Is an ability to make a statement about the health of the disk. To make a disclaimer about data
 and record integrity. The user of the archive has to be able to fill in the gaps without more
