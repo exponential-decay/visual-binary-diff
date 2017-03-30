@@ -23,7 +23,10 @@ of scope for improvement if it proves to be useful.
 2. But how different are they?
 
 If there are no legacy disk images/checksums to compare against, then we can still understand
-the volility of the disk today. I believe this is the equivalent to be hard of seeing/hearing.
+the volility of the disk today. Take two extracts, with a small amount of time between doing so
+and then compare them. 
+
+I believe this is the equivalent to be hard of seeing/hearing.
 
 The reader will do its best to understand, but the signal is analogue so its understanding is
 on a spectrum. We're not expecting binary results from a volatile analog medium.
